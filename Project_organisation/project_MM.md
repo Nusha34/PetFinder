@@ -9,4 +9,4 @@
 * Plot data so that plots can be used in presentation.
 
 - [ ] Build classification model based on the metadata. Get feature importance with respect to Cuteness Meter score. 
-- [ ] Build model based on pictures. Use pretreined models, i.e ResNer, EfficientNet, etc. 
+- [ ] Build model based on pictures. Use pretrained models, i.e ResNer, EfficientNet, etc. 
