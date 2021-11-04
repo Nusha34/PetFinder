@@ -1,1 +1,12 @@
 # TBD
+*.csv
+test/
+train/
+bin/
+include/
+lib/
+*.cfg
+lib64*
+share/
+etc/
+.ipynb_checkpoints/
