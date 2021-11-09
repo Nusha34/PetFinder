@@ -10,3 +10,6 @@
 
 - [ ] Build classification model based on the metadata. Get feature importance with respect to Cuteness Meter score. 
 - [ ] Build model based on pictures. Use pretrained models, i.e ResNer, EfficientNet, etc. 
+
+Open questions:
+Can we train 2 NN models that dedicated to certain images sizes and later on build an ensemble?
