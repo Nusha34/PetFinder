@@ -72,3 +72,7 @@ The  **train.csv**  and  **test.csv**  files contain metadata for photos in the 
 - **Occlusion**  \- Specific undesirable objects blocking part of the pet (i.e. human, cage or fence). Note that not all blocking objects are considered occlusion.
 - **Info**  \- Custom-added text or labels (i.e. pet name, description).
 - **Blur**  \- Noticeably out of focus or noisy, especially for the pet’s eyes and face. For Blur entries, “Eyes” column is always set to 0.
+
+## Presentation
+https://docs.google.com/presentation/d/1XQAzKY56h-ATp-IHJ9xtEhmOnpXwEoIeAxSe-SD2zXQ/edit?usp=sharing
+
