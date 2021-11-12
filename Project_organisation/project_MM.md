@@ -9,5 +9,9 @@
 * Plot data so that plots can be used in presentation.
 
 - [X] Build classification model based on the metadata. Get feature importance with respect to Cuteness Meter score. 
-- [ ] Build model based on pictures. Use pretrained models, i.e ResNer, EfficientNet, etc. 
-- [ ] TBD
+
+## As of 08.11.2021
+- [ ] Build base line model. ResNet18 can be used as pre-trained model
+- [ ] Get visual inspection of pictures. Try to notice anything useful
+- [ ] Get features from pre-trained model. Think what we can get from pre-trained model? 
+- [ ] Manual features creation, i.e size of pictures, brightness and so one. Check if 
