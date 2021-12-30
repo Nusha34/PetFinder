@@ -5,6 +5,7 @@ import wandb
 
 from petfinder_pawpularity.config import create_config, to_flat_dict
 from petfinder_pawpularity.run import train_folds
+from petfinder_pawpularity.util import add_path_to_data
 
 
 def run_weight_decay(wandb_params, data, weight_decay=1e-1):
@@ -21,7 +22,8 @@ def run_weight_decay(wandb_params, data, weight_decay=1e-1):
 
 def run(wandb_entity, wandb_project, wandb_mode=None):
     data_path = "../input/petfinder-pawpularity-score/train"
-    data = pd.read_csv(f"{data_path}.csv")
+    data = add_path_to_data(pd.read_csv(f"{data_path}.csv"), data_path)
+
     wandb_params = dict(
         entity=wandb_entity,
         project=wandb_project,
