@@ -4,6 +4,10 @@
 
 DONE
 
+## Motivation
+
+find some good pretrained models.
+
 ## Desciption
 
 experiments on different models, reuse the pretrained weight, only modify last layer
@@ -25,4 +29,4 @@ experiments on different models, reuse the pretrained weight, only modify last l
 
 - all models perform bad in Reuse Weights. The reason might be that to less parameters to memory the pattern between image and pawpularity score.
 
-- run n_folds for inception v3
+- inception v3 seems interesting, might run n_folds for inception v3

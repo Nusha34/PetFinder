@@ -18,16 +18,20 @@ def get_transform(conf_transform, conf_transforms):
     lib = albumentations if use_albumentations else transforms
     transformers = []
     for t in conf_transforms:
-        if t.name in size_transforms:
-            params = (
-                dict(width=image_size, height=image_size)
-                if use_albumentations
-                else dict(size=[image_size, image_size])
-            )
-        elif t.name == "SmallestMaxSize":
-            params = dict(max_size=image_size)
+        if hasattr(t, "params"):
+            params = t.params
         else:
-            params = t.params if hasattr(t, "params") else dict()
+            if t.name in size_transforms:
+                params = (
+                    dict(width=image_size, height=image_size)
+                    if use_albumentations
+                    else dict(size=[image_size, image_size])
+                )
+            elif t.name == "SmallestMaxSize":
+                params = dict(max_size=image_size)
+            else:
+                params = dict()
+
         transformers.append(getattr(lib, t.name)(**params))
 
     transformers += (

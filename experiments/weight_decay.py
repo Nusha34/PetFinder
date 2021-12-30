@@ -29,7 +29,7 @@ def run(wandb_entity, wandb_project, wandb_mode=None):
         project=wandb_project,
         mode=wandb_mode,
     )
-    for weight_decay in [1e-4]:
+    for weight_decay in [0, 1e-5, 1e-4, 1e-3, 1e-2, 1e-1]:
         run_weight_decay(wandb_params, data, weight_decay)
 
 
