@@ -18,11 +18,12 @@ class PetfinderPawpularityModel(pl.LightningModule):
         **kwargs,
     ):
         super().__init__()
-        self.save_hyperparameters()
 
         # create model
         backbone = create_model(
-            name, pretrained=(pretrained == True), **kwargs
+            name,
+            pretrained=(pretrained == True),
+            **kwargs,
         )
         if isinstance(pretrained, str):
             backbone.load_state_dict(torch.load(pretrained))
@@ -86,7 +87,10 @@ class PetfinderPawpularityModel(pl.LightningModule):
         target = y.float().unsqueeze(1)
         outs = self(x)
         loss = self.loss_function(outs, target)
-        preds = (outs[0] if type(outs) is tuple else outs).detach()
+        preds = (
+            (outs[0] if type(outs) is tuple else outs).detach().float().cpu()
+        )
+        target = target.detach().float().cpu()
         return {"loss": loss, "preds": preds, "targets": target}
 
     def training_step(self, batch, batch_idx):

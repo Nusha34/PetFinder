@@ -53,6 +53,52 @@ def create_config(custom_config=dict()):
     return Box(config)
 
 
+def get_transforms_config(
+    degrees=10,
+    translate=(0.1, 0.1),
+    scale=(0.9, 1.1),
+    shear=0,
+    brightness=0.1,
+    contrast=0,
+    saturation=0.1,
+    hue=0,
+    includes=[],
+):
+    augmented_transforms = [
+        dict(name="RandomHorizontalFlip"),
+        dict(name="RandomPosterize", params=dict(bits=7)),
+        dict(name="RandomAdjustSharpness", params=dict(sharpness_factor=2)),
+        dict(name="RandomAutocontrast"),
+        dict(
+            name="RandomAffine",
+            params=dict(
+                degrees=degrees, translate=translate, scale=scale, shear=shear
+            ),
+        ),
+        dict(
+            name="ColorJitter",
+            params=dict(
+                brightness=brightness,
+                contrast=contrast,
+                saturation=saturation,
+                hue=hue,
+            ),
+        ),
+    ]
+    augmented_transforms = [
+        t for t in augmented_transforms if t["name"] in includes
+    ]
+    resize = dict(name="Resize")
+    augmented_transforms.append(resize)
+
+    return augmented_transforms
+
+
+def get_simple_transform_config():
+    resize = dict(name="Resize")
+    return [resize]
+
+
 def to_flat_dict(box):
     result = dict()
     if not hasattr(box, "items"):
