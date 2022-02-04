@@ -23,6 +23,6 @@ experiments on different beta of auxiliary network
 - [beta=0.2, 18.54](https://wandb.ai/wangyashuu/PetfinderPawpularity/runs/3t20mnxr)
 - [beta=0, 18.569](https://wandb.ai/wangyashuu/PetfinderPawpularity/runs/3cy49m6q)
 
-## Conclusion:
+## Conclusion
 
 - no much different
