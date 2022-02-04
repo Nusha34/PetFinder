@@ -5,13 +5,8 @@ import wandb
 import torch
 
 from petfinder_pawpularity.config import create_config, to_flat_dict
-from petfinder_pawpularity.run import (
-    train_folds,
-    transform_images,
-)
+from petfinder_pawpularity.run import train_folds
 from petfinder_pawpularity.util import add_path_to_data
-
-# swin_large_patch4_window7_224
 
 
 def run_one(
@@ -184,13 +179,6 @@ def run_learning_rate1_large_batch(wandb_params, data, learning_rate=1e-5):
 def run(wandb_entity, wandb_project, wandb_mode=None):
     data_path = "../input/petfinder-pawpularity-score/train"
     data = add_path_to_data(pd.read_csv(f"{data_path}.csv"), data_path)
-
-    # transform_images(
-    #     create_config(dict(transform=dict(image_size=384))), data, simple=True
-    # )
-
-    new_data_path = "./output_images"
-    data = add_path_to_data(pd.read_csv(f"{data_path}.csv"), new_data_path)
 
     wandb_params = dict(
         group=f"experiment-large_model_lr",
