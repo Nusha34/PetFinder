@@ -85,7 +85,7 @@ Val: 18.233 = (18.199+18.257+18.274+18.143+18.294)/5
 - [18.143](https://wandb.ai/wangyashuu/uncategorized/runs/3s970b4x)
 - [18.294](https://wandb.ai/wangyashuu/uncategorized/runs/3vd6a5nn)
 
-###
+### mobilenet
 
 Train
 
